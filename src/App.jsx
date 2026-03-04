@@ -7,7 +7,9 @@ function App() {
  
   return (
     <>
-<Navbar></Navbar>
+<div className='max-w-[1200px] mx-auto'>
+  <Navbar></Navbar>
+</div>
     </>
   )
 }

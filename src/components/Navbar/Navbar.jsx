@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Plus from '../../assets/Vector.png'
 const navbar = () => {
     return (
         <div>
@@ -12,36 +12,27 @@ const navbar = () => {
       <ul
         tabIndex="-1"
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
+        <li>Home</li>
+        <li>FAQ</li>
+        <li>Changelog</li>
+        <li>Blog</li>
+        <li>Download</li>
+        <li>Contact</li>
+            
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-2xl">CS — Ticket System</a>
   </div>
-  <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2 bg-base-100 w-40 z-1">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Item 3</a></li>
-    </ul>
-  </div>
+  <div className="navbar-end hidden lg:flex justify-end gap-3 menu menu-horizontal px-1">
+   <li>Home</li>
+        <li>FAQ</li>
+        <li>Changelog</li>
+        <li>Blog</li>
+        <li>Download</li>
+        <li>Contact</li>
+   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    <a className="btn bg-linear-to-r from-[#632EE3] to-[#9F62F2] text-white"> <span> <img src={Plus} alt="" />  </span> Button</a>
   </div>
 </div>
         </div>
