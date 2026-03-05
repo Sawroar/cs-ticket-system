@@ -1,10 +1,14 @@
 import React from 'react';
 import elipse from "../../assets/Ellipse_1.png"
-const CustomerTicket = ({ customerTicket }) => {
-    console.log(customerTicket)
+const CustomerTicket = ({ customerTicket,selectCustomerTicket,setSelectedCustomerTicket }) => {
+    // console.log(customerTicket)
+    const handleTicket=(ticket)=>{
+        console.log(ticket)
+setSelectedCustomerTicket([...selectCustomerTicket,ticket])
+    }
     return (
         <div>
-            <div className='p-4 m-2 bg-white'>
+            <div className='p-4 m-2 bg-white cursor-pointer' onClick={()=>{handleTicket(customerTicket)}}>
                 <div className='flex justify-between'>
                     <h1 className='font-medium'>{customerTicket.title}</h1>
                     <div className='flex justify-around bg-[#B9F8CF] rounded-2xl p-2'>
@@ -16,7 +20,7 @@ const CustomerTicket = ({ customerTicket }) => {
                 <div className='flex justify-between'>
                     <div className='flex gap-3'>
                         <p className='text-[#627382] text-sm'>{customerTicket.id}</p>
-                        <p className='text-sm'>{customerTicket.priority}</p>
+                        <p className={`text-sm ${customerTicket.priority==='high'? 'text-red-500': "text-black" }`}>{customerTicket.priority}</p>
                     </div>
                     <div className='flex items-center gap-3 text-sm'>
                         <p className='text-[#627382]'>{customerTicket.customer}</p>

@@ -7,6 +7,7 @@ import Status from './components/Status/Status'
 import Footer from './components/Footer/Footer'
 import CustomerTicket from './components/CustomerTickets/CustomerTickets'
 function App() {
+  const [selectCustomerTicket,setSelectedCustomerTicket]=useState([])
  const customerTicketHandler=async()=>{
   const res= await fetch('/CustomerTickets.json')
   return res.json()
@@ -17,8 +18,8 @@ function App() {
     <>
 <div className='max-w-300 mx-auto'>
   <Navbar></Navbar>
-  <Status></Status>
-<Suspense fallback={<div className='flex justify-center items-center'><span className="loading loading-spinner loading-xl"></span></div>}>  <CustomerTicket customerTickets={customerTickets}></CustomerTicket></Suspense>
+  <Status selectCustomerTicket={selectCustomerTicket}  ></Status>
+<Suspense fallback={<div className='flex justify-center items-center'><span className="loading loading-spinner loading-xl"></span></div>}>  <CustomerTicket selectCustomerTicket={selectCustomerTicket} setSelectedCustomerTicket={setSelectedCustomerTicket} customerTickets={customerTickets}></CustomerTicket></Suspense>
   <Footer></Footer>
 </div>
     </>
