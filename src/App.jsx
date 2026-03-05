@@ -6,7 +6,9 @@ import Navbar from '../src/components/Navbar/Navbar'
 import Status from './components/Status/Status'
 import Footer from './components/Footer/Footer'
 import CustomerTicket from './components/CustomerTickets/CustomerTickets'
+  import { ToastContainer } from 'react-toastify';
 function App() {
+ 
   const [selectCustomerTicket,setSelectedCustomerTicket]=useState([])
  const customerTicketHandler=async()=>{
   const res= await fetch('/CustomerTickets.json')
@@ -21,6 +23,7 @@ function App() {
   <Status selectCustomerTicket={selectCustomerTicket}  ></Status>
 <Suspense fallback={<div className='flex justify-center items-center'><span className="loading loading-spinner loading-xl"></span></div>}>  <CustomerTicket selectCustomerTicket={selectCustomerTicket} setSelectedCustomerTicket={setSelectedCustomerTicket} customerTickets={customerTickets}></CustomerTicket></Suspense>
   <Footer></Footer>
+   <ToastContainer />
 </div>
     </>
   )

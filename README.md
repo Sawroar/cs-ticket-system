@@ -1,16 +1,34 @@
-# React + Vite
+Here's a clear breakdown of each concept:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. What is JSX and why is it used?
+JSX (JavaScript XML) is a syntax extension that lets you write HTML-like code inside JavaScript.
+jsx// Without JSX — hard to read
 
-Currently, two official plugins are available:
+// With JSX — clean and readable
+JSX is not valid JavaScript — Babel compiles it into React.createElement() calls behind the scenes. It makes UI code more intuitive and easier to maintain.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. State vs Props
+PropsStatePassed fromParent to ChildManaged inside componentMutable? Read-only Can be changedWho controls it?ParentThe component itself
+jsx// Props — parent passes data down, child can't change it
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+3. useState hook
+useState lets a component hold and update its own data. When state changes, the component re-renders.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+4. Sharing state between components
+There are 3 main ways:
+ Lift state up — share via parent
+
+Context API — share globally without prop drilling
+jsxconst CountContext = createContext()
+
+
+
+State management library — Redux, Zustand for large apps.
+
+5. Event handling in React
+React uses camelCase event names and passes functions, not strings.
+
+key difference from HTML is that you always pass a function reference, never a string, and use e.preventDefault() to stop default browser behavior.

@@ -1,10 +1,12 @@
 import React from 'react';
 import elipse from "../../assets/Ellipse_1.png"
+import { toast } from 'react-toastify';
 const CustomerTicket = ({ customerTicket,selectCustomerTicket,setSelectedCustomerTicket }) => {
     // console.log(customerTicket)
     const handleTicket=(ticket)=>{
         console.log(ticket)
 setSelectedCustomerTicket([...selectCustomerTicket,ticket])
+toast("Ticket Added to The Task List")
     }
     return (
         <div>
